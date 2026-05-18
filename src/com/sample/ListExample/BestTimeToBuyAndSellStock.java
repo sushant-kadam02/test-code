@@ -1,4 +1,4 @@
-package com.sample.ArrayListExample;
+package com.sample.ListExample;
 
 public class BestTimeToBuyAndSellStock {
 

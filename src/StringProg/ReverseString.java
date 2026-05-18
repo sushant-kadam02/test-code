@@ -24,6 +24,22 @@ public class ReverseString {
 
         System.out.println("Reverse string with stream : "+rev);
 
+        char[] input = {'h','e','l','l','o'};
+
+        StringBuilder sb = new StringBuilder();
+        int len = input.length;
+
+        for(int i = len-1; i >= 0 ; i--) {
+            sb.append(input[i]);
+        }
+        System.out.println("Reverse : ");
+        char[] chrev = sb.toString().toCharArray();
+        for(int i = 0; i < chrev.length ; i++) {
+            System.out.print(chrev[i]);
+        }
+
+
+
     }
 
 }
