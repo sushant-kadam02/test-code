@@ -3,7 +3,7 @@ package com.sample.interview;
 public class EvenOddWithThread {
 
     private final int limit;
-    private int counter;
+    private int counter = 1;
 
     EvenOddWithThread(int limit) {
         this.limit = limit;
@@ -27,7 +27,7 @@ public class EvenOddWithThread {
                 try {
                     wait();
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    Thread.currentThread().interrupt();
                 }
             }
             if (counter <= limit) {
@@ -44,11 +44,11 @@ public class EvenOddWithThread {
                 try {
                     wait();
                 } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
+                    Thread.currentThread().interrupt();
                 }
             }
             if (counter <= limit) {
-                System.out.print(counter++);
+                System.out.print(counter + " ");
                 counter++;
                 notifyAll();
             }
