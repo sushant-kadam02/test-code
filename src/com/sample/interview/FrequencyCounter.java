@@ -1,7 +1,10 @@
 package com.sample.interview;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class FrequencyCounter {
     public static void main(String[] args) {
@@ -16,5 +19,15 @@ public class FrequencyCounter {
         for (Map.Entry<Integer, Integer> entry : frqMap.entrySet()) {
             System.out.println("Element : "+entry.getKey() +" Count : "+entry.getValue());
         }
+
+         Map<Integer, Long> collectFreq = Arrays.stream(arr)
+                 .boxed()
+                .collect(Collectors.groupingBy(x -> x, Collectors.counting()));
+
+        collectFreq.forEach((key, value) ->
+                System.out.println("Key : "+key +" Value : "+value)
+        );
+
+
     }
 }
